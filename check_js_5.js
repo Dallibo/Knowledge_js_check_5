@@ -59,3 +59,49 @@ newsString.addNews({
 console.log("Number of news:", newsString.count);
 newsString.displayAllNews();
 
+
+function analyzeString(str) {
+    let letterCount = 0;
+    let digitCount = 0;
+    let otherCount = 0;
+  
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i];
+      if (/[a-zA-Z]/.test(char)) {
+        letterCount++;
+      } else if (/[0-9]/.test(char)) {
+        digitCount++;
+      } else {
+        otherCount++;
+      }
+    }
+    console.log("Кількість літер:", letterCount);
+    console.log("Кількість цифр:", digitCount);
+    console.log("Кількість інших символів:", otherCount);
+  }
+  let str = "Hellow, my name Denis 1!";
+analyzeString(str);
+
+function transformString(str) {
+    let transformedStr = '';
+  
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i];
+  
+      if (/[A-Z]/.test(char)) {
+        transformedStr += char.toLowerCase();
+      } else if (/[a-z]/.test(char)) {
+        transformedStr += char.toUpperCase();
+      } else if (/[0-9]/.test(char)) {
+        transformedStr += '_';
+      } else {
+        transformedStr += char;
+      }
+    }
+  
+    return transformedStr;
+  }
+  let str1 = "Hello, Web-31";
+  let transformedString = transformString(str1);
+  console.log(transformedString);
+  
